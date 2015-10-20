@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Text>Hello World</Text>
+    <FullClassName>RevitLabs.HelloWorld</FullClassName>
+    <Assembly>E:\Projects\RevitLabs\RevitLabs\RevitLabs\bin\Debug\RevitLabs.dll</Assembly>
+    <AddInId>efe403c4-5c96-4254-859d-a63317a3ee8e</AddInId>
+    <VendorId>BLAIR</VendorId>
+    <VendorDescription>Blairacuda Technologies, LLP. - www.blairacuda.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>
