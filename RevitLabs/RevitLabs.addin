@@ -16,6 +16,14 @@
     <VendorId>BLAIR</VendorId>
     <VendorDescription>Blairacuda Technologies, LLP. - www.blairacuda.com</VendorDescription>
   </AddIn>
+  <AddIn Type="Command">
+    <Text>DB Element</Text>
+    <FullClassName>RevitLabs.DBElement</FullClassName>
+    <Assembly>E:\Projects\RevitLabs\RevitLabs\RevitLabs\bin\Debug\RevitLabs.dll</Assembly>
+    <AddInId>2f665453-5f0b-4ea9-9171-05029b30a5ac</AddInId>
+    <VendorId>BLAIR</VendorId>
+    <VendorDescription>Blairacuda Technologies, LLP. - www.blairacuda.com</VendorDescription>
+  </AddIn>
   <AddIn Type="Application">
     <Name>Hello World App</Name>
     <FullClassName>RevitLabs.HelloWorldApp</FullClassName>
