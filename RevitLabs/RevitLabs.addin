@@ -3,7 +3,7 @@
   <AddIn Type="Command">
     <Text>Hello World</Text>
     <FullClassName>RevitLabs.HelloWorld</FullClassName>
-    <Assembly>E:\Projects\RevitLabs\RevitLabs\RevitLabs\bin\Debug\RevitLabs.dll</Assembly>
+    <Assembly>E:\Projects\revitlabs\RevitLabs\bin\Debug\RevitLabs.dll</Assembly>
     <AddInId>efe403c4-5c96-4254-859d-a63317a3ee8e</AddInId>
     <VendorId>BLAIR</VendorId>
     <VendorDescription>Blairacuda Technologies, LLP. - www.blairacuda.com</VendorDescription>
@@ -11,7 +11,7 @@
   <AddIn Type="Command">
     <Text>Command Data</Text>
     <FullClassName>RevitLabs.CommandData</FullClassName>
-    <Assembly>E:\Projects\RevitLabs\RevitLabs\RevitLabs\bin\Debug\RevitLabs.dll</Assembly>
+    <Assembly>E:\Projects\revitlabs\RevitLabs\bin\Debug\RevitLabs.dll</Assembly>
     <AddInId>AA90426A-E8AA-45b4-84AF-861E865871AE</AddInId>
     <VendorId>BLAIR</VendorId>
     <VendorDescription>Blairacuda Technologies, LLP. - www.blairacuda.com</VendorDescription>
@@ -19,7 +19,7 @@
   <AddIn Type="Command">
     <Text>DB Element</Text>
     <FullClassName>RevitLabs.DBElement</FullClassName>
-    <Assembly>E:\Projects\RevitLabs\RevitLabs\RevitLabs\bin\Debug\RevitLabs.dll</Assembly>
+    <Assembly>E:\Projects\revitlabs\RevitLabs\bin\Debug\RevitLabs.dll</Assembly>
     <AddInId>2f665453-5f0b-4ea9-9171-05029b30a5ac</AddInId>
     <VendorId>BLAIR</VendorId>
     <VendorDescription>Blairacuda Technologies, LLP. - www.blairacuda.com</VendorDescription>
@@ -27,7 +27,7 @@
   <AddIn Type="Application">
     <Name>Hello World App</Name>
     <FullClassName>RevitLabs.HelloWorldApp</FullClassName>
-    <Assembly>E:\Projects\RevitLabs\RevitLabs\RevitLabs\bin\Debug\RevitLabs.dll</Assembly>
+    <Assembly>E:\Projects\revitlabs\RevitLabs\bin\Debug\RevitLabs.dll</Assembly>
     <AddInId>9386e4cb-1813-4fe7-a4ac-9789856d6c23</AddInId>
     <VendorId>BLAIR</VendorId>
     <VendorDescription>Blairacuda Technologies, LLP. - www.blairacuda.com</VendorDescription>

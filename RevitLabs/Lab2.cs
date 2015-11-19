@@ -28,21 +28,18 @@ namespace RevitLabs
             m_rvtApp = rvtUIApp.Application;
             m_rvtDoc = rvtUIDoc.Document;
 
-            // (1) pick an object on a screen.
             var refPick = rvtUIDoc.Selection.PickObject(ObjectType.Element, "Pick an element");
-            // we have picked something. 
             var elem = m_rvtDoc.GetElement(refPick);
-            // (2) let's see what kind of element we got. 
-            ShowBasicElementInfo(elem);
-            // (3) identify each major types of element. 
-            IdentifyElement(elem);
-            // (4) first parameters. 
-            ShowParameters(elem, "Element Parameters");
-            //  check to see its type parameter as well 
-            ElementId elemTypeId = elem.GetTypeId();
-            ElementType elemType = (ElementType)m_rvtDoc.GetElement(elemTypeId);
-            ShowParameters(elemType, "Type Parameters");
+            var elemTypeId = elem.GetTypeId();
+            var elemType = (ElementType)m_rvtDoc.GetElement(elemTypeId);
 
+            //ShowBasicElementInfo(elem);
+            //IdentifyElement(elem);
+            //ShowParameters(elem, "Element Parameters");
+            //ShowParameters(elemType, "Type Parameters");
+
+            RetrieveParameter( elem, "Element Parameter (by Name and BuiltInParameter)");
+            RetrieveParameter( elemType, "Type Parameter (by Name and BuiltInParameter)");
 
 
             return Result.Succeeded;
@@ -167,7 +164,68 @@ namespace RevitLabs
             return val;
         }
 
+        public void RetrieveParameter(Element elem, string header)
+        {
+            string s = string.Empty;
 
+            // as an experiment, let's pick up some arbitrary parameters. 
+            // comments - most of instance has this parameter 
+
+            // (1) by BuiltInParameter. 
+            var param = elem.get_Parameter(BuiltInParameter.ALL_MODEL_INSTANCE_COMMENTS);
+            if (param != null)
+            {
+                s += "Comments (by BuiltInParameter) = " +
+                ParameterToString(param) + "\n";
+            }
+
+            // (2) by name. (Mark - most of instance has this parameter.) 
+            // if you use this method, it will language specific. 
+            param = elem.LookupParameter("Mark");
+            if (param != null)
+            {
+                s += "Mark (by Name) = " + ParameterToString(param) + "\n";
+            }
+
+            // the following should be in most of type parameter 
+            // 
+            param = elem.get_Parameter(BuiltInParameter.ALL_MODEL_TYPE_COMMENTS);
+            if (param != null)
+            {
+                s += "Type Comments (by BuiltInParameter) = " +
+                ParameterToString(param) + "\n";
+            }
+
+            param = elem.LookupParameter("Fire Rating");
+            if (param != null)
+            {
+                s += "Fire Rating (by Name) = " + ParameterToString(param) +
+                    "\n";
+            }
+
+            // using the BuiltInParameter, you can sometimes access one that is
+            // not in the parameters set. 
+            // Note: this works only for element type. 
+
+            param = elem.get_Parameter(
+             BuiltInParameter.SYMBOL_FAMILY_AND_TYPE_NAMES_PARAM);
+            if (param != null)
+            {
+                s += "SYMBOL_FAMILY_AND_TYPE_NAMES_PARAM (only by BuiltInParameter) = " +
+                 ParameterToString(param) + "\n";
+            }
+
+            param = elem.get_Parameter(BuiltInParameter.SYMBOL_FAMILY_NAME_PARAM);
+            if (param != null)
+            {
+                s += "SYMBOL_FAMILY_NAME_PARAM (only by BuiltInParameter) = "
+                    + ParameterToString(param) + "\n";
+            }
+
+            // show it. 
+
+            TaskDialog.Show(header, s);
+
+        }
     }
-
 }
